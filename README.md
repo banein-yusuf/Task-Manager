@@ -17,4 +17,4 @@ It was created as part of Week 1 practice.
 4. You can edit or delete each task.
 
 ## Author
-Made by [banein-yusuf]
+Made by banein-yusuf
