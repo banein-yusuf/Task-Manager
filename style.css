@@ -1,0 +1,82 @@
+body {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffcc00;
+    font-size: 40px;
+    text-shadow: 2px 2px #000;
+}
+
+h4 {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+#nt {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    outline: none;
+}
+
+#add {
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#add:hover {
+    background-color: #ff6699;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 60%;
+}
+
+li {
+    background-color: #2e2e4d;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+li button {
+    background-color: #ff4444;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+li button:hover {
+    background-color: #ff7777;
+    transform: scale(1.05);
+}
+
+#errorMsg {
+    color: #ff6666;
+    margin-top: 10px;
+}
