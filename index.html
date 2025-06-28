@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div style="display: flex; justify-content: flex-end; padding: 15px;">
+        <button id="toggleDarkMode" class="mode-toggle-btn">
+            Dark Mode
+        </button>
+    </div>
+    <header>
+        <h1>Task Manager</h1>
+        <small>Week-1 Project</small>
+    </header>
+    <div class="content">
+        <input type="text" placeholder="Enter task" id="nt">
+        <div id="toast" class="toast"></div>
+        <button id="add">Add</button>
+        <p id="errorMsg"></p>
+        <div class="listcl">
+            <ul id="tl"></ul>
+        </div>
 
-    <h1>Task Manager</h1>
-    <h4>Week-1 Project</h4>
-    <input type="text" placeholder="Enter task" id="nt">
-    <button id="add">Add</button>
-    <p id="errorMsg"></p>
-    <ul id="tl"></ul>
-
+    </div>
+    <div id="confirmBox" style="display: none;" class="modal">
+        <div class="modal-content">
+            <p id="confirmMessage">Are you sure you want to delete this Task?</p>
+            <div class="modal-btn">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

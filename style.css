@@ -1,82 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
-    background-color: #1e1e2f;
-    color: #ffffff;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #e2f1ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark {
+    background-color: #002345;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: grid;
+    gap: 20px;
+    place-items: center;
+    font-size: x-large;
+    padding: 30px;
+    color: #1ea3ff;
+}
+
+.content {
+    display: grid;
+    place-items: center;
+    gap: 10px;
     padding: 20px;
+    width: 100%;
 }
 
-h1 {
-    color: #ffcc00;
-    font-size: 40px;
-    text-shadow: 2px 2px #000;
-}
-
-h4 {
-    color: #cccccc;
-    margin-bottom: 20px;
-}
-
-#nt {
+input {
+    width: 100%;
+    max-width: 400px;
     padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ffcc00;
-    border-radius: 10px;
-    outline: none;
-}
-
-#add {
-    background-color: #ff3366;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-#add:hover {
-    background-color: #ff6699;
-    transform: scale(1.05);
+    border: 1px solid #1ea3ff;
+    border-radius: 5px;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
-    width: 60%;
+    width: 600px;
 }
 
 li {
-    background-color: #2e2e4d;
+    background-color: #1ea3ff;
     margin: 10px 0;
     padding: 10px 15px;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 3fr 0.5fr 0.5fr;
+    gap: 5px;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-li button {
-    background-color: #ff4444;
+body.dark li {
+    background-color: #007df6;
+    color: #002345;
+}
+
+#add,
+li button,
+body.dark .mode-toggle-btn {
+    background-color: #ffffff;
+    color: #1ea3ff;
+    font-weight: bold;
     border: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.3s ease;
 }
 
-li button:hover {
-    background-color: #ff7777;
+
+body.dark #add,
+body.dark li button,
+.mode-toggle-btn {
+    background-color: #00406c;
+    color: #1ea3ff;
+    font-weight: bold;
+    border: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#add:hover,
+li button:hover,
+body.dark .mode-toggle-btn:hover {
+    background-color: #e2f1ff;
+    transform: scale(1.05);
+}
+
+body.dark #add:hover,
+body.dark li button:hover,
+.mode-toggle-btn:hover {
+    background-color: #005793;
     transform: scale(1.05);
 }
 
 #errorMsg {
     color: #ff6666;
     margin-top: 10px;
+}
+
+.toast {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #444;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #444;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+}
+
+.modal-content button {
+    padding: 8px 16px;
+    margin-top: 20px;
+    border: 1px solid #888;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+#yesBtn {
+    background-color: #888;
+    color: white;
+}
+
+#noBtn {
+    background-color: #888;
+    color: white;
 }
